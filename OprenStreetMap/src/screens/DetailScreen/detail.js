@@ -15,13 +15,13 @@ const Detail = (props) => {
                         <Image source={Icons.Arrow} style={Styles.Icon} />
                     </TouchableOpacity>
                 </View>
-                <Text style={Styles.Middle}>Location Old School Details</Text>
+                <Text style={Styles.Middle}>Location Details</Text>
                 <View style={Styles.Right}>
                     <Image source={Icons.About} style={Styles.Icon} />
                 </View>
             </View>
             <View style={Styles.Main}>
-                <Text style={Styles.MainText}>Luthiana Details</Text>
+                <Text style={Styles.MainText}>Luthiana Old School Details</Text>
                 <View style={Styles.MainInner}>
                     <View style={Styles.AccordianContainer}>
                         <View>

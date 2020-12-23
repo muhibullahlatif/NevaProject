@@ -14,11 +14,23 @@ class Home extends React.Component{
                 { name: 'Position 3', latitude: 37.7665248, longitude: -122.4161628 },
                 { name: 'Position 4', latitude: 37.7734153, longitude: -122.4577787 },
                 { name: 'Position 5', latitude: 37.7948605, longitude: -122.4596065 },
-            ]
+            ],
+            location: true,
+            showLocation: 'Show Locations',
+            hideLocation: 'Hide Locations',
         }
     }
     NavigateScreen = () => {
         this.props.navigation.navigate('Detail');
+    }
+
+    HideLocation = () => {
+        if(this.state.location === true){
+            this.setState({location: false})
+        }
+        if(this.state.location === false){
+            this.setState({location: true})
+        }
     }
     render() {
         return(
@@ -75,6 +87,14 @@ class Home extends React.Component{
                 </Marker> */}
             </View>
             <View style={Styles.Body}>      
+            <View style={Styles.BtnRow}>
+                <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() => {this.HideLocation()}}
+                    style={Styles.ButtonHideShow}
+                    >
+                        <Text style={Styles.LocText}>{this.state.location === true ? this.state.hideLocation : this.state.showLocation}</Text>
+                    </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={1}
                     onPress={() => {this.props.navigation.navigate('Detail')}}
@@ -82,7 +102,13 @@ class Home extends React.Component{
                     >
                         <Text style={Styles.LocText}>Navigate To Detail</Text>
                     </TouchableOpacity>
-                <View style={Styles.Footer}>
+                </View>
+                {
+                    this.state.location === false 
+                    ? 
+                    <View style={Styles.Footer}><Text></Text></View>
+                    :
+                    <View style={Styles.Footer}>
                     <Text style={Styles.LocText2}>Locations</Text>
                     <View style={Styles.MapRound}>
                         <Image source={Icons.Map} style={Styles.RoundMap} />
@@ -91,6 +117,7 @@ class Home extends React.Component{
                         <Image source={Icons.Map} style={Styles.RoundMap} />
                     </View>
                 </View>
+                }
             </View>
         </View>
         );
