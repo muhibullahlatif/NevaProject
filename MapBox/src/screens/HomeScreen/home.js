@@ -33,8 +33,8 @@ class Home extends React.Component{
                     <Image source={Icons.Notify} style={Styles.Icon} />
                 </View>
             </View>
-            <View style={{marginTop: 20, height: '56%', padding: 10}}>
-                <WebView source={{ uri: 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4241,37.78,14.25,0,60/600x600?access_token=pk.eyJ1Ijoia3Rva3RvIiwiYSI6ImNrajBqMWUyZTFpZjMzMW54N3M4NHg4ZjcifQ.EESknqLptsq43iJRda_CnQ' }} />
+            <View style={{marginTop: 20, height: this.state.location === true ? '56%' : '80%', padding: 10}}>
+                <WebView source={{ uri: 'https://api.mapbox.com/styles/v1/ali123map/ckj2pfm7hat3219mhw4kcxxew.html?fresh=true&title=view&access_token=pk.eyJ1IjoiYWxpMTIzbWFwIiwiYSI6ImNrajJwOHNzYTU2N3kycmxiNGE1ZXd4aGYifQ.7ysCo05mM_9nCwfVlkx__w' }} />
             </View>
             <View style={Styles.Body}>      
             <View style={Styles.BtnRow}>

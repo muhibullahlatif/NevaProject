@@ -33,7 +33,7 @@ class Home extends React.Component{
                     <Image source={Icons.Notify} style={Styles.Icon} />
                 </View>
             </View>
-            <View style={{marginTop: 20, height: '56%', padding: 10}}>
+            <View style={{marginTop: 20, height: this.state.location === true ? '56%' : '80%', padding: 10}}>
                 <WebView source={{ uri: 'https://osm.org/go/0lP6ojs_?m=' }} />
             </View>
             <View style={Styles.Body}>      

@@ -44,7 +44,7 @@ class Home extends React.Component{
                     <Image source={Icons.Notify} style={Styles.Icon} />
                 </View>
             </View>
-            <View style={Styles.MapContainer}>
+            <View style={[Styles.MapContainer, {height: this.state.location === true ? '55%' : '80%'}]}>
                 <MapView 
                     provider={PROVIDER_GOOGLE}
                     showsUserLocation={true}
@@ -77,14 +77,6 @@ class Home extends React.Component{
                     fillColor={'rgba(100, 100, 200, 0.3)'}
                 />
                 </MapView>
-                {/* <Marker
-                    draggable
-                    coordinate={{latitude: 37.7825259, longitude: -122.4351431 }}
-                    >
-                    <Callout onPress={this.NavigateScreen}>
-                        <Image source={Icons.Notify} style={{width: 20, height: 20}} />
-                    </Callout>
-                </Marker> */}
             </View>
             <View style={Styles.Body}>      
             <View style={Styles.BtnRow}>

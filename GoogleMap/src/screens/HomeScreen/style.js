@@ -57,7 +57,6 @@ export default StyleSheet.create({
   },
   MapContainer: {
     padding: 5,
-    height: '55%',
     marginBottom: 20,
   },
   Map: {
